@@ -35,7 +35,21 @@ namespace Microsoft.Xna.Framework.Input
 
         public static void InitDatabase()
         {
-
+            using (var stream = typeof(GamePad).GetTypeInfo().Assembly.GetManifestResourceStream("gamecontrollerdb.txt"))
+            {
+                if (stream != null)
+                {
+                    using (var reader = new BinaryReader(stream))
+                    {
+                        try
+                        {
+                            var src = Sdl.RwFromMem(reader.ReadBytes((int)stream.Length), (int)stream.Length);
+                            Sdl.GameController.AddMappingFromRw(src, 1);
+                        }
+                        catch { }
+                    }
+                }
+            }
         }
 
         internal static void AddDevice(int deviceId)

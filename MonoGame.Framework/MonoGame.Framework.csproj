@@ -14,6 +14,9 @@
     <EmbeddedResource Include="MonoGame.bmp">
       <LogicalName>MonoGame.bmp</LogicalName>
     </EmbeddedResource>
+    <EmbeddedResource Include="SDL\gamecontrollerdb.txt">
+      <LogicalName>gamecontrollerdb.txt</LogicalName>
+    </EmbeddedResource>
     <EmbeddedResource Include="Graphics\Effect\Resources\AlphaTestEffect.ogl.mgfxo">
       <LogicalName>Microsoft.Xna.Framework.Graphics.Effect.Resources.AlphaTestEffect.ogl.mgfxo</LogicalName>
     </EmbeddedResource>
